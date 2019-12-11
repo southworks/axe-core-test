@@ -18,4 +18,8 @@
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.26.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AxeCoreTest\AxeCoreTest.csproj" />
+  </ItemGroup>
+
 </Project>
