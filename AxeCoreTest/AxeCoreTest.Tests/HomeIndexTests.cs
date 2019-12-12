@@ -32,8 +32,8 @@ namespace AxeCoreTest.Tests
         [TestInitialize]
         public void LoadTestPage()
         {
-            string samplePageFilePath = Path.GetFullPath(@"Sample.html");
-            string samplePageFileUrl = new Uri(samplePageFilePath).AbsoluteUri;
+            //string samplePageFilePath = Path.GetFullPath(@"Sample.html");
+            string samplePageFileUrl = new Uri("https://azure.microsoft.com/en-us/").AbsoluteUri;
             _webDriver.Navigate().GoToUrl(samplePageFileUrl);
 
             new WebDriverWait(_webDriver, TimeSpan.FromSeconds(10))
