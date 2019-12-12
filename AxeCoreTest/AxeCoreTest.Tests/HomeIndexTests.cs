@@ -41,19 +41,13 @@ namespace AxeCoreTest.Tests
         }
 
         [TestMethod]
-        public void Should_Fail_Because_Is_Not_Empty()
+        public void Should_Pass_With_Aria_Allowed_Role_Rule_Disabled()
         {
-            AxeResult axeResult = new AxeBuilder(_webDriver).Analyze();
+            AxeResult axeResult = new AxeBuilder(_webDriver)
+                .DisableRules("aria-allowed-role")
+                .Analyze();
 
             axeResult.Violations.Should().BeEmpty();
-        }
-
-        [TestMethod]
-        public void Should_Pass_Because_Is_Not_Empty()
-        {
-            AxeResult axeResult = new AxeBuilder(_webDriver).Analyze();
-
-            axeResult.Violations.Should().NotBeEmpty();
         }
     }
 }
