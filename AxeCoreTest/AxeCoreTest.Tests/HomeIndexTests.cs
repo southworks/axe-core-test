@@ -37,7 +37,7 @@ namespace AxeCoreTest.Tests
             _webDriver.Navigate().GoToUrl(samplePageFileUrl);
 
             new WebDriverWait(_webDriver, TimeSpan.FromSeconds(10))
-                .Until(d => d.FindElement(By.TagName("main")));
+                .Until(d => d.FindElement(By.TagName("body")));
         }
 
         [TestMethod]
