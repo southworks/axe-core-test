@@ -49,5 +49,16 @@ namespace AxeCoreTest.Tests
 
             axeResult.Violations.Should().BeEmpty();
         }
+
+        [TestMethod]
+        public void Shoud_Pass_Excluding_CSS_Classes_Failing_Nodes()
+        {
+            AxeResult axeResult = new AxeBuilder(_webDriver)
+                .Exclude(".owl-prev")
+                .Exclude(".owl-next")
+                .Analyze();
+
+            axeResult.Violations.Should().BeEmpty();
+        }
     }
 }
