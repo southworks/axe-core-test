@@ -60,5 +60,15 @@ namespace AxeCoreTest.Tests
 
             axeResult.Violations.Should().BeEmpty();
         }
+
+        [TestMethod]
+        public void Should_Pass_Testing_Cat_Semantics_Tag_Only()
+        {
+            AxeResult axeResult = new AxeBuilder(_webDriver)
+                .WithTags("cat.semantics")
+                .Analyze();
+
+            axeResult.Violations.Should().BeEmpty();
+        }
     }
 }
